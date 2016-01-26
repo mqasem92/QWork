@@ -4,8 +4,20 @@ using System.Text;
 
 namespace QWork.Extension.Arabic
 {
+    /// <summary>
+    /// Static Convertor For Arabic
+    /// </summary>
+    /// <createdOn>1/26/2016 10:04 AM</createdOn>
     public static class Converter
     {
+        /// <summary>
+        /// To the string with arabic numbers.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="format">The format.</param>
+        /// <param name="formatProvider">The format provider.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:04 AM</createdOn>
         public static string ToStringWithArabicNumbers(this int input, string format = null, IFormatProvider formatProvider = null)
         {
             string str;
@@ -29,7 +41,14 @@ namespace QWork.Extension.Arabic
             return str.ToStringWithArabicNumbers();
         }
 
-
+        /// <summary>
+        /// To the string with arabic numbers.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="format">The format.</param>
+        /// <param name="formatProvider">The format provider.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:04 AM</createdOn>
         public static string ToStringWithArabicNumbers(this decimal input, string format = null, IFormatProvider formatProvider = null)
         {
             string str;
@@ -53,7 +72,14 @@ namespace QWork.Extension.Arabic
             return str.ToStringWithArabicNumbers();
         }
 
-
+        /// <summary>
+        /// To the string with arabic numbers.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="format">The format.</param>
+        /// <param name="formatProvider">The format provider.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:04 AM</createdOn>
         public static string ToStringWithArabicNumbers(this double input, string format = null, IFormatProvider formatProvider = null)
         {
             string str;
@@ -77,7 +103,14 @@ namespace QWork.Extension.Arabic
             return str.ToStringWithArabicNumbers();
         }
 
-
+        /// <summary>
+        /// To the string with arabic numbers.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="format">The format.</param>
+        /// <param name="formatProvider">The format provider.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:04 AM</createdOn>
         public static string ToStringWithArabicNumbers(this short input, string format = null, IFormatProvider formatProvider = null)
         {
             string str;
@@ -101,7 +134,14 @@ namespace QWork.Extension.Arabic
             return str.ToStringWithArabicNumbers();
         }
 
-
+        /// <summary>
+        /// To the string with arabic numbers.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="format">The format.</param>
+        /// <param name="formatProvider">The format provider.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:05 AM</createdOn>
         public static string ToStringWithArabicNumbers(this float input, string format = null, IFormatProvider formatProvider = null)
         {
             string str;
@@ -125,7 +165,14 @@ namespace QWork.Extension.Arabic
             return str.ToStringWithArabicNumbers();
         }
 
-
+        /// <summary>
+        /// To the string with arabic numbers.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="format">The format.</param>
+        /// <param name="formatProvider">The format provider.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:05 AM</createdOn>
         public static string ToStringWithArabicNumbers(this DateTime input, string format = null, IFormatProvider formatProvider = null)
         {
             string str;
@@ -149,7 +196,14 @@ namespace QWork.Extension.Arabic
             return str.ToStringWithArabicNumbers();
         }
 
-
+        /// <summary>
+        /// To the string with arabic numbers.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="format">The format.</param>
+        /// <param name="formatProvider">The format provider.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:05 AM</createdOn>
         public static string ToStringWithArabicNumbers(this byte input, string format = null, IFormatProvider formatProvider = null)
         {
             string str;
@@ -173,7 +227,12 @@ namespace QWork.Extension.Arabic
             return str.ToStringWithArabicNumbers();
         }
 
-
+        /// <summary>
+        /// To the string with arabic numbers.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:05 AM</createdOn>
         public static string ToStringWithArabicNumbers(this string input)
         {
             var utf8Encoder = new UTF8Encoding();
