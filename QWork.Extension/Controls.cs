@@ -249,6 +249,64 @@ namespace QWork.Extension
 
         #endregion
 
+        #region HyperLink
+
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="control">The control.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:44 AM</createdOn>
+        public static T GetValue<T>(this HyperLink control, T defaultValue = default(T))
+        {
+            return control.Text.To(defaultValue);
+        }
+
+        /// <summary>
+        /// Sets the value.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="value">The value.</param>
+        /// <createdOn>1/26/2016 10:44 AM</createdOn>
+        public static void SetValue(this HyperLink control, object value)
+        {
+            var valueString = Convert.ToString(value, CultureInfo.InvariantCulture);
+            control.Text = valueString;
+        }
+
+        #endregion
+
+        #region HiddenField
+
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="control">The control.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:44 AM</createdOn>
+        public static T GetValue<T>(this HiddenField control, T defaultValue = default(T))
+        {
+            return control.Value.To(defaultValue);
+        }
+
+        /// <summary>
+        /// Sets the value.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="value">The value.</param>
+        /// <createdOn>1/26/2016 10:44 AM</createdOn>
+        public static void SetValue(this HiddenField control, object value)
+        {
+            var valueString = Convert.ToString(value, CultureInfo.InvariantCulture);
+            control.Value = valueString;
+        }
+
+        #endregion
+
         #region Drop Down List
 
         /// <summary>
