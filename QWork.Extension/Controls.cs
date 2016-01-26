@@ -9,11 +9,20 @@ using System.Web.UI.WebControls;
 
 namespace QWork.Extension
 {
+    /// <summary>
+    /// Static Controls Class
+    /// </summary>
+    /// <createdOn>1/26/2016 10:01 AM</createdOn>
     public static class Controls
     {
         #region Bind
 
-        //TODO: Test
+        /// <summary>
+        /// Binds the with.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="dataSource">The data source.</param>
+        /// <createdOn>1/26/2016 9:58 AM</createdOn>
         public static void BindWith(this DataBoundControl control, ICollection dataSource)
         {
             control.DataSource = dataSource;
@@ -22,7 +31,17 @@ namespace QWork.Extension
 
         #region Drop Down List
 
-        //TODO: Test
+        /// <summary>
+        /// Binds the with.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="dataSource">The data source.</param>
+        /// <param name="valueField">The value field.</param>
+        /// <param name="textField">The text field.</param>
+        /// <param name="isRequired">if set to <c>true</c> [is required].</param>
+        /// <param name="defaultTextValue">The default text value.</param>
+        /// <createdOn>1/26/2016 9:58 AM</createdOn>
+        /// <exception cref="System.ArgumentNullException">No Controls Found !</exception>
         public static void BindWith(this DropDownList control, ICollection dataSource,
             string valueField, string textField, bool isRequired = true, string defaultTextValue = "")
         {
@@ -52,7 +71,13 @@ namespace QWork.Extension
             control.Items.Insert(0, new ListItem(defaultTextValue, string.Empty));
         }
 
-        //TODO: Test
+        /// <summary>
+        /// Binds the with.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="dataSource">The data source.</param>
+        /// <param name="isRequired">if set to <c>true</c> [is required].</param>
+        /// <createdOn>1/26/2016 9:58 AM</createdOn>
         public static void BindWith(this DropDownList control, ICollection dataSource, bool isRequired = true)
         {
             string dataTextField = string.IsNullOrWhiteSpace(control.DataTextField) ? "Text" : control.DataTextField;
@@ -66,13 +91,26 @@ namespace QWork.Extension
 
         #region TextBox
 
-        //TODO: Test
+        /// <summary>
+        /// Trimmeds the text.
+        /// </summary>
+        /// <param name="textBox">The text box.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:59 AM</createdOn>
         public static string TrimmedText(this TextBox textBox)
         {
             return textBox.Text.Trim();
         }
 
-        //TODO: Test
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="control">The control.</param>
+        /// <param name="trimmedText">if set to <c>true</c> [trimmed text].</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:59 AM</createdOn>
         public static T GetValue<T>(this TextBox control, bool trimmedText = false, T defaultValue = default(T))
         {
             if (trimmedText)
@@ -81,7 +119,12 @@ namespace QWork.Extension
             return control.Text.To(defaultValue);
         }
 
-        //TODO: Test
+        /// <summary>
+        /// Sets the value.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="value">The value.</param>
+        /// <createdOn>1/26/2016 9:59 AM</createdOn>
         public static void SetValue(this TextBox control, object value)
         {
             var valueString = Convert.ToString(value, CultureInfo.InvariantCulture);
@@ -92,13 +135,25 @@ namespace QWork.Extension
 
         #region Label
 
-        //TODO: Test
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="control">The control.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:59 AM</createdOn>
         public static T GetValue<T>(this Label control, T defaultValue = default(T))
         {
             return control.Text.To(defaultValue);
         }
 
-        //TODO: Test
+        /// <summary>
+        /// Sets the value.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="value">The value.</param>
+        /// <createdOn>1/26/2016 9:59 AM</createdOn>
         public static void SetValue(this Label control, object value)
         {
             var valueString = Convert.ToString(value, CultureInfo.InvariantCulture);
@@ -109,13 +164,25 @@ namespace QWork.Extension
 
         #region Literal
 
-        //TODO: Test
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="control">The control.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:59 AM</createdOn>
         public static T GetValue<T>(this Literal control, T defaultValue = default(T))
         {
             return control.Text.To(defaultValue);
         }
 
-        //TODO: Test
+        /// <summary>
+        /// Sets the value.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="value">The value.</param>
+        /// <createdOn>1/26/2016 9:59 AM</createdOn>
         public static void SetValue(this Literal control, object value)
         {
             var valueString = Convert.ToString(value, CultureInfo.InvariantCulture);
@@ -126,13 +193,25 @@ namespace QWork.Extension
 
         #region Button
 
-        //TODO: Test
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="control">The control.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:59 AM</createdOn>
         public static T GetValue<T>(this Button control, T defaultValue = default(T))
         {
             return control.Text.To(defaultValue);
         }
 
-        //TODO: Test
+        /// <summary>
+        /// Sets the value.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="value">The value.</param>
+        /// <createdOn>1/26/2016 9:59 AM</createdOn>
         public static void SetValue(this Button control, object value)
         {
             var valueString = Convert.ToString(value, CultureInfo.InvariantCulture);
@@ -143,13 +222,25 @@ namespace QWork.Extension
 
         #region LinkButton
 
-        //TODO: Test
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="control">The control.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:59 AM</createdOn>
         public static T GetValue<T>(this LinkButton control, T defaultValue = default(T))
         {
             return control.Text.To(defaultValue);
         }
 
-        //TODO: Test
+        /// <summary>
+        /// Sets the value.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="value">The value.</param>
+        /// <createdOn>1/26/2016 10:00 AM</createdOn>
         public static void SetValue(this LinkButton control, object value)
         {
             var valueString = Convert.ToString(value, CultureInfo.InvariantCulture);
@@ -160,13 +251,26 @@ namespace QWork.Extension
 
         #region Drop Down List
 
-        //TODO: Test
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="control">The control.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:00 AM</createdOn>
         public static T GetValue<T>(this DropDownList control, T defaultValue = default(T))
         {
             return control.SelectedValue.To(defaultValue);
         }
 
-        //TODO: Test
+        /// <summary>
+        /// Sets the value.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:00 AM</createdOn>
         public static bool SetValue(this DropDownList control, object value)
         {
             var valueString = Convert.ToString(value, CultureInfo.InvariantCulture);

@@ -6,10 +6,22 @@ using System.Text.RegularExpressions;
 
 namespace QWork.Extension
 {
+    /// <summary>
+    /// Static Converter Class
+    /// </summary>
+    /// <createdOn>1/26/2016 9:55 AM</createdOn>
     public static class Converter
     {
         #region Common
 
+        /// <summary>
+        /// To the specified default value.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="obj">The object.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:50 AM</createdOn>
         public static T To<T>(this object obj, T defaultValue)
         {
             if (obj == null)
@@ -39,6 +51,17 @@ namespace QWork.Extension
 
             return To(obj, defaultValue, type);
         }
+
+        /// <summary>
+        /// To the specified object.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="obj">The object.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <param name="type">The type.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:50 AM</createdOn>
+        /// <exception cref="System.NotSupportedException"></exception>
         private static T To<T>(object obj, T defaultValue, Type type)
         {
             // Place convert to structures types here
@@ -207,6 +230,12 @@ namespace QWork.Extension
 
         #region Guid
 
+        /// <summary>
+        /// To the unique identifier.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:50 AM</createdOn>
         public static Guid ToGuid(this string value)
         {
             try
@@ -219,6 +248,12 @@ namespace QWork.Extension
             }
         }
 
+        /// <summary>
+        /// To the unique identifier.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:51 AM</createdOn>
         public static Guid ToGuid(this object value)
         {
             try
@@ -245,11 +280,24 @@ namespace QWork.Extension
 
         #region Byte
 
+        /// <summary>
+        /// To the byte.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:51 AM</createdOn>
         public static byte ToByte(this object value)
         {
             return Convert.ToByte(value);
         }
 
+        /// <summary>
+        /// To the byte.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:51 AM</createdOn>
         public static byte ToByte(this string value, byte defaultValue)
         {
             byte result;
@@ -261,6 +309,12 @@ namespace QWork.Extension
             return defaultValue;
         }
 
+        /// <summary>
+        /// To the nullable byte.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:51 AM</createdOn>
         public static byte? ToNullableByte(this object value)
         {
             if (value == null || value == DBNull.Value)
@@ -275,11 +329,24 @@ namespace QWork.Extension
 
         #region Short
 
+        /// <summary>
+        /// To the short.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:52 AM</createdOn>
         public static short ToShort(this object value)
         {
             return Convert.ToInt16(value);
         }
 
+        /// <summary>
+        /// To the short.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:52 AM</createdOn>
         public static short ToShort(this string value, short defaultValue)
         {
             short result;
@@ -291,6 +358,12 @@ namespace QWork.Extension
             return defaultValue;
         }
 
+        /// <summary>
+        /// To the nullable short.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:52 AM</createdOn>
         public static short? ToNullableShort(this object value)
         {
             if (value == null || value == DBNull.Value)
@@ -305,11 +378,24 @@ namespace QWork.Extension
 
         #region Double
 
+        /// <summary>
+        /// To the double.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:52 AM</createdOn>
         public static double ToDouble(this object value)
         {
             return Convert.ToDouble(value);
         }
 
+        /// <summary>
+        /// To the double.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:52 AM</createdOn>
         public static double ToDouble(this object value, double defaultValue)
         {
             double result;
@@ -323,6 +409,12 @@ namespace QWork.Extension
             return defaultValue;
         }
 
+        /// <summary>
+        /// To the nullable double.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:54 AM</createdOn>
         public static double? ToNullableDouble(this object value)
         {
             if (value == null || value == DBNull.Value)
@@ -337,6 +429,12 @@ namespace QWork.Extension
 
         #region Int
 
+        /// <summary>
+        /// To the nullable int.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:54 AM</createdOn>
         public static int? ToNullableInt(this object value)
         {
             if (value == null || value == DBNull.Value)
@@ -347,11 +445,24 @@ namespace QWork.Extension
             return new Nullable<int>(Convert.ToInt32(value));
         }
 
+        /// <summary>
+        /// Converts the string representation of a number to an integer.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:54 AM</createdOn>
         public static int ToInt(this object value)
         {
             return Convert.ToInt32(value);
         }
 
+        /// <summary>
+        /// Converts the string representation of a number to an integer.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:54 AM</createdOn>
         public static int ToInt(this object value, int defaultValue)
         {
             string stringValue = value == null ? string.Empty : value.ToString();
@@ -369,6 +480,12 @@ namespace QWork.Extension
 
         #region Bool
 
+        /// <summary>
+        /// To the bool.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:55 AM</createdOn>
         public static bool ToBool(this object value)
         {
             return Convert.ToBoolean(value);
@@ -378,11 +495,23 @@ namespace QWork.Extension
 
         #region DateTime
 
+        /// <summary>
+        /// To the date time.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:55 AM</createdOn>
         public static DateTime ToDateTime(this object value)
         {
             return Convert.ToDateTime(value);
         }
 
+        /// <summary>
+        /// To the nullable date time.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:55 AM</createdOn>
         public static DateTime? ToNullableDateTime(this object value)
         {
             if (value == null || value == DBNull.Value)
@@ -397,7 +526,13 @@ namespace QWork.Extension
 
         #region Collection
 
-        //TODO: Test
+        /// <summary>
+        /// To the data table.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items">The items.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 9:55 AM</createdOn>
         public static DataTable ToDataTable<T>(this IEnumerable<T> items)
         {
             var propertyDescriptors = TypeDescriptor.GetProperties(typeof(T));

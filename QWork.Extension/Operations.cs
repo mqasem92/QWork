@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 
 namespace QWork.Extension
 {
+    /// <summary>
+    /// Static Operation Class
+    /// </summary>
+    /// <createdOn>1/26/2016 10:00 AM</createdOn>
     public static class Operations
     {
         #region string
 
-        //TODO: Test
+        /// <summary>
+        /// Removes the white spaces.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:00 AM</createdOn>
         public static string RemoveWhiteSpaces(this string value)
         {
             var stringBuilder = new StringBuilder();
@@ -31,7 +40,12 @@ namespace QWork.Extension
             return stringBuilder.ToString();
         }
 
-        //TODO: Test
+        /// <summary>
+        /// To the HTML mode.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/26/2016 10:00 AM</createdOn>
         public static string ToHtmlMode(this string value)
         {
             return !string.IsNullOrEmpty(value) ? value.Replace(Environment.NewLine, "<br/>") : string.Empty;
