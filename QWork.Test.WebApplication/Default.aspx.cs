@@ -20,14 +20,7 @@ namespace QWork.Test.WebApplication
         {
             try
             {
-                if (fuTestControl.IsValidFileType(FileType.Spreadsheet))
-                {
-                    Response.Write("Valid Size");
-                }
-                else
-                {
-                    Response.Write("Is Not Valid Size !");
-                }
+                Response.Redirect("~/Default.aspx?text=mohamed&value=5");
             }
             catch (Exception ex)
             {

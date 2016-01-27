@@ -11,6 +11,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QWork.Test.WindowsApplicati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QWork.Test.WebApplication", "QWork.Test.WebApplication\QWork.Test.WebApplication.csproj", "{B866AB5D-F0D6-447A-AD98-72CC06216650}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{825B803A-420A-475A-B4C1-7D9A0341A0D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extension", "Extension", "{E3DD313A-BC61-4427-9803-609CD1064A1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QWork.Extension.Web", "QWork.Extension.Web\QWork.Extension.Web.csproj", "{F8D90816-1BC5-4675-AA95-90D2BF7B59D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QWork.Extension.Forms", "QWork.Extension.Form\QWork.Extension.Forms.csproj", "{D454226E-3C19-489D-883A-0DDF55F47F3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +41,22 @@ Global
 		{B866AB5D-F0D6-447A-AD98-72CC06216650}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B866AB5D-F0D6-447A-AD98-72CC06216650}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B866AB5D-F0D6-447A-AD98-72CC06216650}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8D90816-1BC5-4675-AA95-90D2BF7B59D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D90816-1BC5-4675-AA95-90D2BF7B59D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D90816-1BC5-4675-AA95-90D2BF7B59D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D90816-1BC5-4675-AA95-90D2BF7B59D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D454226E-3C19-489D-883A-0DDF55F47F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D454226E-3C19-489D-883A-0DDF55F47F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D454226E-3C19-489D-883A-0DDF55F47F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D454226E-3C19-489D-883A-0DDF55F47F3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{45E87899-4A9A-4954-A2D7-3D9D6B4E0BC2} = {E3DD313A-BC61-4427-9803-609CD1064A1A}
+		{E42B9683-8542-4286-BF0A-38D6E8736D8B} = {825B803A-420A-475A-B4C1-7D9A0341A0D2}
+		{F8D90816-1BC5-4675-AA95-90D2BF7B59D5} = {E3DD313A-BC61-4427-9803-609CD1064A1A}
+		{D454226E-3C19-489D-883A-0DDF55F47F3C} = {E3DD313A-BC61-4427-9803-609CD1064A1A}
 	EndGlobalSection
 EndGlobal

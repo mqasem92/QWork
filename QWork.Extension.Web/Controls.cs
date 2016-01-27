@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 
-namespace QWork.Extension
+namespace QWork.Extension.Web
 {
     /// <summary>
     /// Static Controls Class

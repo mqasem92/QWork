@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{45E87899-4A9A-4954-A2D7-3D9D6B4E0BC2}</ProjectGuid>
+    <ProjectGuid>{F8D90816-1BC5-4675-AA95-90D2BF7B59D5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QWork.Extension</RootNamespace>
-    <AssemblyName>QWork.Extension</AssemblyName>
+    <RootNamespace>QWork.Extension.Web</RootNamespace>
+    <AssemblyName>QWork.Extension.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,9 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arabic\Converter.cs" />
-    <Compile Include="Converter.cs" />
     <Compile Include="Checking.cs" />
+    <Compile Include="Controls.cs" />
     <Compile Include="Operations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -52,8 +51,11 @@
       <Project>{e42b9683-8542-4286-bf0a-38d6e8736d8b}</Project>
       <Name>QWork.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\QWork.Extension\QWork.Extension.csproj">
+      <Project>{45e87899-4a9a-4954-a2d7-3d9d6b4e0bc2}</Project>
+      <Name>QWork.Extension</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
