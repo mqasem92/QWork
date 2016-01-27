@@ -124,12 +124,24 @@ namespace QWork.Extension
         /// <param name="compareValue">The compare value.</param>
         /// <returns></returns>
         /// <createdOn>1/26/2016 9:57 AM</createdOn>
-        public static bool IsLargerThan(this object value, object compareValue)
+        public static bool IsLargerThan(this double value, object compareValue)
         {
             double number = value.ToDouble();
             double numberToCompare = compareValue.ToDouble();
 
             return number > numberToCompare ? true : false;
+        }
+
+        /// <summary>
+        /// Determines whether [is larger than] [the specified compare value].
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="compareValue">The compare value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/27/2016 8:42 AM</createdOn>
+        public static bool IsLargerThan(this int value, object compareValue)
+        {
+            return value.ToDouble().IsLargerThan(compareValue);
         }
 
         /// <summary>
@@ -139,12 +151,24 @@ namespace QWork.Extension
         /// <param name="compareValue">The compare value.</param>
         /// <returns></returns>
         /// <createdOn>1/26/2016 9:58 AM</createdOn>
-        public static bool IsLargerThanOrEqual(this object value, object compareValue)
+        public static bool IsLargerThanOrEqual(this double value, object compareValue)
         {
             double number = value.ToDouble();
             double numberToCompare = compareValue.ToDouble();
 
             return number >= numberToCompare ? true : false;
+        }
+
+        /// <summary>
+        /// Determines whether [is larger than or equal] [the specified compare value].
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="compareValue">The compare value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/27/2016 8:42 AM</createdOn>
+        public static bool IsLargerThanOrEqual(this int value, object compareValue)
+        {
+            return value.ToDouble().IsLargerThanOrEqual(compareValue);
         }
 
         /// <summary>
@@ -154,12 +178,24 @@ namespace QWork.Extension
         /// <param name="compareValue">The compare value.</param>
         /// <returns></returns>
         /// <createdOn>1/26/2016 9:58 AM</createdOn>
-        public static bool IsLessThan(this object value, object compareValue)
+        public static bool IsLessThan(this double value, object compareValue)
         {
             double number = value.ToDouble();
             double numberToCompare = compareValue.ToDouble();
 
             return number < numberToCompare ? true : false;
+        }
+
+        /// <summary>
+        /// Determines whether [is less than] [the specified compare value].
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="compareValue">The compare value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/27/2016 8:43 AM</createdOn>
+        public static bool IsLessThan(this int value, object compareValue)
+        {
+            return value.ToDouble().IsLessThan(compareValue);
         }
 
         /// <summary>
@@ -169,12 +205,24 @@ namespace QWork.Extension
         /// <param name="compareValue">The compare value.</param>
         /// <returns></returns>
         /// <createdOn>1/26/2016 9:58 AM</createdOn>
-        public static bool IsLessThanOrEqual(this object value, object compareValue)
+        public static bool IsLessThanOrEqual(this double value, object compareValue)
         {
             double number = value.ToDouble();
             double numberToCompare = compareValue.ToDouble();
 
             return number <= numberToCompare ? true : false;
+        }
+
+        /// <summary>
+        /// Determines whether [is less than or equal] [the specified compare value].
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="compareValue">The compare value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/27/2016 8:43 AM</createdOn>
+        public static bool IsLessThanOrEqual(this int value, object compareValue)
+        {
+            return value.ToDouble().IsLessThanOrEqual(compareValue);
         }
 
         /// <summary>
@@ -271,11 +319,13 @@ namespace QWork.Extension
             if (!control.HasFile || !control.HasFiles)
                 throw new Exception("No file exsit in the file upload");
 
+            var isAllowedExtension = false;
+
             if (control.AllowMultiple)
             {
                 foreach (var file in control.PostedFiles)
                 {
-                    var isAllowedExtension = FileTypeSetting.IsAllowedExtension(file.FileName.GetSimpleFileExtension(), fileType);
+                    isAllowedExtension = FileTypeSetting.IsAllowedExtension(file.FileName.GetSimpleFileExtension(), fileType);
 
                     if (!isAllowedExtension)
                         return false;
@@ -283,11 +333,11 @@ namespace QWork.Extension
             }
             else
             {
-                return
+                isAllowedExtension =
                     FileTypeSetting.IsAllowedExtension(control.PostedFile.FileName.GetSimpleFileExtension(), fileType);
             }
 
-            return false;
+            return isAllowedExtension;
         }
 
         #endregion

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using QWork.Core.Enum;
+using QWork.Extension;
 
 namespace QWork.Test.WebApplication
 {
@@ -12,6 +14,25 @@ namespace QWork.Test.WebApplication
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnSubmit_OnClick(object sender, EventArgs e)
+        {
+            try
+            {
+                if (fuTestControl.IsValidFileType(FileType.Spreadsheet))
+                {
+                    Response.Write("Valid Size");
+                }
+                else
+                {
+                    Response.Write("Is Not Valid Size !");
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
         }
     }
 }

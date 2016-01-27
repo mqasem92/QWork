@@ -129,6 +129,19 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QWork.Core\QWork.Core.csproj">
+      <Project>{e42b9683-8542-4286-bf0a-38d6e8736d8b}</Project>
+      <Name>QWork.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QWork.Extension\QWork.Extension.csproj">
+      <Project>{45e87899-4a9a-4954-a2d7-3d9d6b4e0bc2}</Project>
+      <Name>QWork.Extension</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

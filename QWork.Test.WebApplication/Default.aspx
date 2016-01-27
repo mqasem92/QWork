@@ -8,9 +8,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        
-    </div>
+        <div>
+            <asp:FileUpload ID="fuTestControl" AllowMultiple="True" runat="server" />
+            <asp:Button runat="server" ID="btnSubmit" OnClick="btnSubmit_OnClick" Text="Submit" />
+        </div>
     </form>
 </body>
 </html>
