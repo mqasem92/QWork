@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QWork.Core.Enum;
 
 namespace QWork.Core.Settings
 {
@@ -11,7 +12,7 @@ namespace QWork.Core.Settings
     /// File Typs Class Settings
     /// </summary>
     /// <createdOn>1/26/2016 12:24 PM</createdOn>
-    public class FileType
+    public class FileTypeSetting
     {
         #region Private Keys
 
@@ -245,6 +246,55 @@ namespace QWork.Core.Settings
                 var value = ConfigurationManager.AppSettings[_websiteExtensionsKey];
                 return !string.IsNullOrEmpty(value) ? value : _websiteExtensions;
             }
+        }
+
+        #endregion
+
+        #region Helper
+
+        /// <summary>
+        /// Determines whether [is allowed extension] [the specified extension].
+        /// </summary>
+        /// <param name="extension">The extension.</param>
+        /// <param name="fileType">Type of the file.</param>
+        /// <returns></returns>
+        /// <createdOn>1/27/2016 8:00 AM</createdOn>
+        /// <exception cref="System.ArgumentOutOfRangeException">null</exception>
+        public static bool IsAllowedExtension(string extension, FileType fileType = FileType.Image)
+        {
+            var isAllowed = false;
+
+            switch (fileType)
+            {
+                case FileType.Image:
+                    isAllowed = FileTypeSetting.ImageExtensions.Contains(extension);
+                    break;
+                case FileType.Document:
+                    isAllowed = FileTypeSetting.DocumentExtensions.Contains(extension);
+                    break;
+                case FileType.Presentation:
+                    isAllowed = FileTypeSetting.PresentationExtensions.Contains(extension);
+                    break;
+                case FileType.Spreadsheet:
+                    isAllowed = FileTypeSetting.SpreadsheetExtensions.Contains(extension);
+                    break;
+                case FileType.CompressedFile:
+                    isAllowed = FileTypeSetting.CompressedFileExtensions.Contains(extension);
+                    break;
+                case FileType.Website:
+                    isAllowed = FileTypeSetting.WebsiteExtensions.Contains(extension);
+                    break;
+                case FileType.Sound:
+                    isAllowed = FileTypeSetting.SoundExtensions.Contains(extension);
+                    break;
+                case FileType.Video:
+                    isAllowed = FileTypeSetting.VideoExtensions.Contains(extension);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(fileType), fileType, null);
+            }
+
+            return isAllowed;
         }
 
         #endregion

@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using QWork.Core.Enum;
+using QWork.Core.Settings;
 
 namespace QWork.Extension
 {
@@ -220,6 +221,17 @@ namespace QWork.Extension
             return regEx.IsMatch(value.ToString());
         }
 
+        /// <summary>
+        /// Determines whether this instance is empty.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/27/2016 7:46 AM</createdOn>
+        public static bool IsEmpty(this Guid value)
+        {
+            return value == Guid.Empty;
+        }
+
         #endregion
 
         #region file upload
@@ -256,17 +268,24 @@ namespace QWork.Extension
         /// <createdOn>1/26/2016 12:27 PM</createdOn>
         public static bool IsValidFileType(this FileUpload control, FileType fileType = FileType.Image)
         {
-            //if (!control.HasFile || !control.HasFiles)
-            //    throw new Exception("No file exsit in the file upload");
+            if (!control.HasFile || !control.HasFiles)
+                throw new Exception("No file exsit in the file upload");
 
-            //if (control.AllowMultiple)
-            //{
-            //    foreach (var file in control.PostedFiles)
-            //    {
-                    
-            //    }
-            //}
-            //TODO: Implement Code
+            if (control.AllowMultiple)
+            {
+                foreach (var file in control.PostedFiles)
+                {
+                    var isAllowedExtension = FileTypeSetting.IsAllowedExtension(file.FileName.GetSimpleFileExtension(), fileType);
+
+                    if (!isAllowedExtension)
+                        return false;
+                }
+            }
+            else
+            {
+                return
+                    FileTypeSetting.IsAllowedExtension(control.PostedFile.FileName.GetSimpleFileExtension(), fileType);
+            }
 
             return false;
         }
