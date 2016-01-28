@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 
 namespace QWork.Extension.Web
@@ -157,6 +155,24 @@ namespace QWork.Extension.Web
                 throw new Exception("File upload is not Allow Multiple upload files");
 
             return control.PostedFiles.Select(file => file.FileName.GetSimpleFileName()).ToList();
+        }
+
+        /// <summary>
+        /// Clears the specified control.
+        /// </summary>
+        /// <param name="control">The control.</param>
+        /// <createdOn>1/27/2016 10:09 PM</createdOn>
+        public static void Clear(this FileUpload control)
+        {
+            control.PostedFile.InputStream.Dispose();
+
+            if (control.AllowMultiple)
+            {
+                foreach (var files in control.PostedFiles)
+                {
+                    files.InputStream.Dispose();
+                }
+            }
         }
 
         #endregion

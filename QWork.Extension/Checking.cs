@@ -274,5 +274,27 @@ namespace QWork.Extension
         }
 
         #endregion
+
+        #region string
+
+        /// <summary>
+        /// Determines whether this instance is valid email.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        /// <createdOn>1/28/2016 6:45 AM</createdOn>
+        public static bool IsEmail(this string value)
+        {
+            value = value.Trim();
+
+            if (string.IsNullOrEmpty(value))
+                return false;
+
+            const string pattern = @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*";
+
+            return Regex.IsMatch(value, pattern);
+        }
+
+        #endregion
     }
 }

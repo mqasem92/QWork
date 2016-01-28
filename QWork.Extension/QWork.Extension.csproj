@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arabic\Checking.cs" />
     <Compile Include="Arabic\Converter.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="Checking.cs" />

@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QWork.Extension.Web", "QWor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QWork.Extension.Forms", "QWork.Extension.Form\QWork.Extension.Forms.csproj", "{D454226E-3C19-489D-883A-0DDF55F47F3C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{EB392031-A81C-42E9-AF8D-AB241E6F0552}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QWork.Extension.UnitTest", "QWork.Extension.UnitTest\QWork.Extension.UnitTest.csproj", "{53B36453-5480-456F-AC35-5961C59CC75A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{D454226E-3C19-489D-883A-0DDF55F47F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D454226E-3C19-489D-883A-0DDF55F47F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D454226E-3C19-489D-883A-0DDF55F47F3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B36453-5480-456F-AC35-5961C59CC75A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B36453-5480-456F-AC35-5961C59CC75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B36453-5480-456F-AC35-5961C59CC75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B36453-5480-456F-AC35-5961C59CC75A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +66,6 @@ Global
 		{E42B9683-8542-4286-BF0A-38D6E8736D8B} = {825B803A-420A-475A-B4C1-7D9A0341A0D2}
 		{F8D90816-1BC5-4675-AA95-90D2BF7B59D5} = {E3DD313A-BC61-4427-9803-609CD1064A1A}
 		{D454226E-3C19-489D-883A-0DDF55F47F3C} = {E3DD313A-BC61-4427-9803-609CD1064A1A}
+		{53B36453-5480-456F-AC35-5961C59CC75A} = {EB392031-A81C-42E9-AF8D-AB241E6F0552}
 	EndGlobalSection
 EndGlobal
